@@ -88,7 +88,7 @@ const Home = () => {
               <h1 className="font-bold text-4xl lg:text-[56px] lg:leading-[72px] text-center">
                 Upgrade Your Tech Accessorize with Gadget Heaven Accessories
               </h1>
-              <p className="font-normal text-base text-center">
+              <p className="font-normal text-base text-center px-3">
                 Explore the latest gadgets that will take your experience to
                 <br /> the next level. From smart devices to the coolest
                 accessories, we have it all!
@@ -104,7 +104,7 @@ const Home = () => {
             {/* Heading Ends */}
 
             {/* Banner starts */}
-            <div className="w-[85%] lg:w-[1062px] lg:h-[563px] mx-auto backdrop-blur-2xl bg-white/30 margin lg:p-6 p-2 border border-white  rounded-[32px] absolute left-8 lg:left-60">
+            <div className="w-[85%] lg:w-[1062px] lg:h-[563px] mx-auto backdrop-blur-2xl bg-white/30 margin lg:p-6 p-2 border border-white  rounded-[32px] absolute lg:-bottom-1/2 left-1/2 transform -translate-x-1/2">
               <figure className="border w-full h-full rounded-[32px] overflow-hidden">
                 <img className="object-fit w-full h-full" src={banner} alt="" />
               </figure>
