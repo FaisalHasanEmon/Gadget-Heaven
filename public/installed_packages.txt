@@ -1,0 +1,4 @@
+Installed Packages: 
+1. Tailwind
+2. DaisyUI
+3. React Router

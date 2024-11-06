@@ -1,0 +1,128 @@
+[
+  {
+    "product_id": "P001",
+    "product_title": "Apple iPhone 15 Pro Max",
+    "product_image": "https://ibb.co.com/wpBfNr7",
+    "category": "Iphone",
+    "product_category": "iPhone",
+    "price": 1299,
+    "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+    "specification": [
+      "6.7-inch Super Retina XDR display",
+      "A17 Bionic chip",
+      "Triple-camera system (48MP Main, 12MP Telephoto, 12MP Ultrawide)",
+      "LiDAR Scanner",
+      "Up to 2TB storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P002",
+    "product_title": "Samsung Galaxy Watch 6",
+    "product_image": "https://ibb.co.com/V37dTTh",
+    "category": "Smart Watches",
+    "product_category": "Smart Watches",
+    "price": 399,
+    "description": "Stay connected and track your health with the Samsung Galaxy Watch 6.",
+    "specification": [
+      "1.5-inch Super AMOLED display",
+      "Exynos W930 processor",
+      "Heart rate and ECG monitoring",
+      "Sleep tracking",
+      "GPS and 5ATM water resistance"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P003",
+    "product_title": "Dell XPS 13 Laptop",
+    "product_image": "https://ibb.co.com/sWPCYpW",
+    "category": "Laptop",
+    "product_category": "Laptop",
+    "price": 999,
+    "description": "High-performance, lightweight laptop for productivity on the go.",
+    "specification": [
+      "13.4-inch FHD+ display",
+      "Intel Core i7 12th Gen processor",
+      "16GB RAM, 512GB SSD",
+      "Intel Iris Xe Graphics",
+      "Windows 11"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P004",
+    "product_title": "Apple MacBook Pro 14-inch",
+    "product_image": "https://ibb.co.com/724hD70",
+    "category": "MacBook",
+    "product_category": "MacBook",
+    "price": 1999,
+    "description": "Powerful MacBook Pro with M2 chip for professionals and creators.",
+    "specification": [
+      "14.2-inch Liquid Retina XDR display",
+      "Apple M2 Pro chip",
+      "16GB RAM, 1TB SSD",
+      "1080p FaceTime HD camera",
+      "macOS Ventura"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P005",
+    "product_title": "Anker Wireless Charger",
+    "product_image": "https://ibb.co.com/gJbyhCz",
+    "category": "Phones Accessories",
+    "product_category": "Phones",
+    "price": 29,
+    "description": "Fast wireless charger compatible with iPhone, Samsung, and other Qi-enabled devices.",
+    "specification": [
+      "10W high-speed wireless charging",
+      "Compatible with most phone cases",
+      "LED indicator",
+      "Non-slip surface",
+      "USB-C compatible"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P006",
+    "product_title": "Apple Watch Series 8",
+    "product_image": "https://ibb.co.com/1f2WzK1",
+    "category": "Smart Watches",
+    "product_category": "Smart Watches",
+    "price": 499,
+    "description": "Advanced smartwatch with health and fitness tracking capabilities.",
+    "specification": [
+      "1.9-inch Always-On Retina display",
+      "S8 SiP with 64-bit dual-core processor",
+      "Blood oxygen and ECG app",
+      "Sleep tracking",
+      "Water-resistant up to 50 meters"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P007",
+    "product_title": "Google Pixel Buds Pro",
+    "product_image": "https://ibb.co.com/fDYyTKC",
+    "category": "Phones Accessories",
+    "product_category": "Phones",
+    "price": 179,
+    "description": "Premium wireless earbuds with active noise cancellation.",
+    "specification": [
+      "Active noise cancellation and transparency mode",
+      "IPX4 water resistance",
+      "Wireless charging case",
+      "Up to 11 hours of listening time",
+      "Google Assistant built-in"
+    ],
+    "availability": true,
+    "rating": 4.4
+  }
+]
