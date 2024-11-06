@@ -1,14 +1,17 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import banner from "../assets/banner.jpg";
+import Gadgets from "../components/Gadgets";
 
 const Home = () => {
+  const product_categories = useLoaderData();
+
   return (
-    <>
+    <div>
       {/* Navbar and Banner Section */}
-      <section className="font-sora container mx-auto mt-[30px]">
+      <section className="font-sora container mx-auto mt-[30px] mb-[500px]">
         {/*Main Nav  */}
         <div className="text-white w-full backdrop-blur-3xl rounded-[32px] bg-white/60 p-2 border">
           <div className="bg-mainBg border rounded-[32px] w-full h-[694px]">
@@ -104,17 +107,19 @@ const Home = () => {
             {/* Heading Ends */}
 
             {/* Banner starts */}
-            <div className="w-[85%] lg:w-[1062px] lg:h-[563px] mx-auto backdrop-blur-2xl bg-white/30 margin lg:p-6 p-2 border border-white  rounded-[32px] absolute lg:-bottom-1/2 left-1/2 transform -translate-x-1/2">
-              <figure className="border w-full h-full rounded-[32px] overflow-hidden">
-                <img className="object-fit w-full h-full" src={banner} alt="" />
-              </figure>
+            <div className="w-full">
+              <div className="w-[85%] lg:w-[1062px] lg:h-[563px] mx-auto backdrop-blur-2xl bg-white/30 margin lg:p-6 p-2 border border-white  rounded-[32px] absolute lg:-bottom-1/2 left-1/2 transform -translate-x-1/2">
+                <figure className="border w-full h-full rounded-[32px] overflow-hidden">
+                  <img className="object-fit w-full h-full" src={banner} />
+                </figure>
+              </div>
             </div>
             {/* Banner ends */}
           </div>
         </div>
       </section>
-      <section></section>
-    </>
+      <Gadgets product_categories={product_categories}></Gadgets>
+    </div>
   );
 };
 

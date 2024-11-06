@@ -1,5 +1,6 @@
 [
   {
+    "id": 6,
     "product_id": "P001",
     "product_title": "Apple iPhone 15 Pro Max",
     "product_image": "https://ibb.co.com/wpBfNr7",
@@ -18,6 +19,7 @@
     "rating": 4.8
   },
   {
+    "id": 4,
     "product_id": "P002",
     "product_title": "Samsung Galaxy Watch 6",
     "product_image": "https://ibb.co.com/V37dTTh",
@@ -36,6 +38,7 @@
     "rating": 4.6
   },
   {
+    "id": 1,
     "product_id": "P003",
     "product_title": "Dell XPS 13 Laptop",
     "product_image": "https://ibb.co.com/sWPCYpW",
@@ -54,6 +57,7 @@
     "rating": 4.7
   },
   {
+    "id": 5,
     "product_id": "P004",
     "product_title": "Apple MacBook Pro 14-inch",
     "product_image": "https://ibb.co.com/724hD70",
@@ -72,6 +76,7 @@
     "rating": 4.9
   },
   {
+    "id": 3,
     "product_id": "P005",
     "product_title": "Anker Wireless Charger",
     "product_image": "https://ibb.co.com/gJbyhCz",
@@ -90,6 +95,7 @@
     "rating": 4.5
   },
   {
+    "id": 4,
     "product_id": "P006",
     "product_title": "Apple Watch Series 8",
     "product_image": "https://ibb.co.com/1f2WzK1",
@@ -108,6 +114,7 @@
     "rating": 4.8
   },
   {
+    "id": 3,
     "product_id": "P007",
     "product_title": "Google Pixel Buds Pro",
     "product_image": "https://ibb.co.com/fDYyTKC",
