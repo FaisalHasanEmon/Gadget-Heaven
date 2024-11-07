@@ -2,8 +2,12 @@ import React from "react";
 import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { getFromCard, getWishList } from "../utilities";
 
 const Navbar = () => {
+  const number_of_card = getFromCard().length;
+  const number_of_wish_list = getWishList().length;
+
   return (
     <>
       <div className="navbar md:pr-16 mt-1">
@@ -61,11 +65,27 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="flex justify-center items-center gap-2 md:gap-4">
-            <Link className="bg-white border rounded-full w-8 lg:w-10 h-8 lg:h-10 flex justify-center items-center">
-              <BsCart3 size={20} color="black" />
+            <Link
+              to="/dashboard"
+              className="bg-white border rounded-full w-8 lg:w-10 h-8 lg:h-10 flex justify-center items-center"
+            >
+              <div className="relative">
+                <BsCart3 size={20} color="black" />
+                <p className="font-sora absolute bottom-4  left-4 bg-slate-500 h-5 w-5 text-center rounded-full text-white">
+                  {number_of_card}
+                </p>
+              </div>
             </Link>
-            <Link className="bg-white border rounded-full w-8 lg:w-10 h-8 lg:h-10 flex justify-center items-center">
-              <IoMdHeartEmpty size={20} color="black" />
+            <Link
+              to="/dashboard"
+              className="bg-white border rounded-full w-8 lg:w-10 h-8 lg:h-10 flex justify-center items-center"
+            >
+              <div className="relative">
+                <IoMdHeartEmpty size={20} color="black" />
+                <p className="font-sora absolute bottom-4  left-4 bg-slate-500 h-5 w-5 text-center rounded-full text-white">
+                  {number_of_wish_list}
+                </p>
+              </div>
             </Link>
           </div>
         </div>

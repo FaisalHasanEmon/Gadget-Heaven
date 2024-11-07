@@ -5,12 +5,22 @@ import { useLocation } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import ReactStars from "react-rating-stars-component";
+import {
+  addItemsToCard,
+  addWishList,
+  getFromCard,
+  getWishList,
+} from "../utilities";
+import Footer from "../components/Footer";
 
 const Details = () => {
   const location = useLocation();
   const data = location.state;
-  const [isAvailable, useIsAvailable] = useState(false);
+  const [setButton, useSetButton] = useState(false);
+  const [setWishList, useSetWishList] = useState("black");
   const {
+    id,
+    product_id,
     product_image,
     product_title,
     price,
@@ -24,12 +34,40 @@ const Details = () => {
     document.title = "Details";
   }, []);
 
+  // For Card Data
+  useEffect(() => {
+    const getDataFromCard = getFromCard();
+    const isExist = getDataFromCard.find(
+      (item) => item.product_id == product_id
+    );
+    isExist && useSetWishList("gray");
+  }, []);
+
+  // For Wish List Data
+  useEffect(() => {
+    const getDataFromCard = getWishList();
+    const isExist = getDataFromCard.find(
+      (item) => item.product_id == product_id
+    );
+    isExist && useSetButton(true);
+  }, []);
+
+  const handleAddCard = (gadget) => {
+    addItemsToCard(gadget);
+    useSetButton(true);
+  };
+
+  const handleWishList = (wish) => {
+    addWishList(wish);
+    useSetWishList("gray");
+  };
+
   return (
     <div>
       <div className="container mx-auto font-sora">
         <Navbar></Navbar>
       </div>
-      <div className=" bg-mainBg h-[375px] flex flex-col justify-start items-center pt-8 ">
+      <div className=" bg-mainBg h-[375px] flex flex-col justify-start items-center pt-8 mb-[600px]">
         <Heading
           title="Product Details"
           subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
@@ -79,10 +117,19 @@ const Details = () => {
               </div>
             </div>
             <div className="flex justify-start gap-4 items-center">
-              <button className="btn bg-mainBg text-white hover:bg-green-500 rounded-[50px]">
+              <button
+                onClick={() => handleAddCard(data)}
+                className="btn bg-mainBg text-white hover:bg-green-500 rounded-[50px]"
+                disabled={setButton ? true : ""}
+              >
                 Add To Card <BsCart3 size={20} color="white" />
               </button>{" "}
-              <IoMdHeartEmpty size={30} color="black" />
+              <IoMdHeartEmpty
+                size={30}
+                color={setWishList}
+                bsStyle="success"
+                onClick={() => handleWishList(data)}
+              />
             </div>
           </div>
         </div>
