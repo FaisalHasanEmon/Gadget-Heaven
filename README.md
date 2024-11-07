@@ -1,8 +1,20 @@
-# React + Vite
+# Live Link : [https://gadget-heaven-ph.netlify.app/](https://gadget-heaven-ph.netlify.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Gadget Heaven
 
-Currently, two official plugins are available:
+1. **Project Name:** [Gadget Heaven](https://gadget-heaven-ph.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. **A brief description**: People can by gadgets
+3. **Technology Used:** This beautiful website is build with the following technologies:
+
+- REACT
+- API
+- Tailwind
+- DaisyUI
+- React toasters
+- React Router
+
+4. **Key Features:**
+
+- User select gadgets
+- Buy gadgets
