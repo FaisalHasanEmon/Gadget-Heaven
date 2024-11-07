@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       {/* Navbar and Banner Section */}
-      <section className="font-sora container mx-auto mt-[30px] mb-[500px]">
+      <section className="font-sora container mx-auto mt-[30px] mb-[150px] lg:mb-[500px]">
         {/*Main Nav  */}
         <div className="text-white w-full backdrop-blur-3xl rounded-[32px] bg-white/60 p-2 border">
           <div className="bg-mainBg border rounded-[32px] w-full h-[694px]">
@@ -119,20 +119,20 @@ const Home = () => {
       </section>
 
       <section className="font-sora container px-14 mx-auto ">
-        <h1 className="font-bold text-[40px] text-center">
+        <h1 className="font-bold text-3xl lg:text-[40px] text-center">
           Explore Cutting-Edge Gadgets
         </h1>
-        <div className="flex flex-col justify-center items-center lg:flex-row gap-6 mt-12">
+        <div className="flex flex-col  lg:flex-row gap-6 mt-12">
           <div
-            className="grid grid-cols-2 lg:grid-cols-1  self-start gap-6  border  p-6 bg-[#FFFFFF] rounded-2xl"
+            className="grid grid-cols-2 lg:grid-cols-1  self-start gap-3 lg:gap-6  border p-2 lg:p-6 bg-[#FFFFFF] rounded-2xl"
             role="tablist"
           >
             {product_categories.map((item) => (
               <NavLink
-                to={`/home/:${item.id}`}
+                to={`/home/${item.id}`}
                 key={item.id}
                 className={({ isActive }) =>
-                  `px-[28px] py-[14px] text-left rounded-[32px] ${
+                  `px-3 lg:px-[28px] py-[14px] flex justify-start items-center rounded-[32px]  ${
                     isActive ? "bg-purple-500 text-white" : "bg-[#09080F0D]"
                   }`
                 }
@@ -141,7 +141,7 @@ const Home = () => {
               </NavLink>
             ))}
           </div>
-          <div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <Outlet></Outlet>
           </div>
         </div>

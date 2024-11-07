@@ -20,7 +20,7 @@ const Cards = ({ product }) => {
           </h3>
           <p className="mt-3">Price: {price}k</p>
           <button
-            onClick={() => navigate("/details")}
+            onClick={() => navigate("/details", { state: product })}
             className="mt-4 btn btn-outline btn-secondary"
           >
             View Details

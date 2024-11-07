@@ -6,24 +6,22 @@ const GadgetCategories = () => {
   const { productID } = useParams();
   const data = useLoaderData();
   const [category, setCategory] = useState([]);
-
+  console.log(category, productID);
   useEffect(() => {
+    console.log(productID);
     if (productID) {
-      const id = parseInt(productID.replace(":", ""));
-      const filteredData = [...data].filter((item) => item.id === id);
+      const filteredData = [...data].filter((item) => item.id == productID);
       setCategory(filteredData);
     } else {
       setCategory(data);
     }
   }, [productID, data]);
-
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <>
       {category.map((item) => (
-        <Cards key={item.id} product={item}></Cards>
+        <Cards key={item.product_id} product={item}></Cards>
       ))}
-      {category.map((item) => console.log("Id: ", category.id))}
-    </div>
+    </>
   );
 };
 
