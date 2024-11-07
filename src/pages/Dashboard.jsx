@@ -6,6 +6,9 @@ import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 
 const Dashboard = () => {
+  useEffect(() => {
+    document.title = "Dashboard";
+  }, []);
   return (
     <div className="font-sora">
       <div className="container mx-auto ">

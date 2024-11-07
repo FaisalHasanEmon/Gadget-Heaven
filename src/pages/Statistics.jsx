@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 
 const Statistics = () => {
+  useEffect(() => {
+    document.title = "Statistics";
+  }, []);
   return (
     <div className="container mx-auto">
       <Navbar></Navbar>

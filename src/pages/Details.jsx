@@ -4,9 +4,7 @@ import Heading from "../components/Heading";
 import { useLocation } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
-// import ReactStars from "react-rating-stars-component";
-// import Rating from "react-rating";
-// import ReactStars from "react-rating-stars-component";
+import ReactStars from "react-rating-stars-component";
 
 const Details = () => {
   const location = useLocation();
@@ -22,11 +20,9 @@ const Details = () => {
     rating,
   } = data;
 
-  const firstExample = {
-    size: 30,
-    value: rating,
-    edit: false,
-  };
+  useEffect(() => {
+    document.title = "Details";
+  }, []);
 
   return (
     <div>
@@ -66,8 +62,21 @@ const Details = () => {
               </ul>
             </div>
             <div>
-              <p>Rating</p>
-              {/* <ReactStars {...firstExample} /> */}
+              <p className="text-lg font-bold flex justify-start items-center gap-2">
+                Rating <div className="h-3 w-3 bg-black"></div>
+              </p>
+              <div className="flex justify-start items-center gap-4">
+                <ReactStars
+                  count={5}
+                  value={rating}
+                  isHalf={true}
+                  size={24}
+                  activeColor="#ffd700"
+                />
+                <p className="w-[50px] h-8 bg-[#09080F0D] flex justify-center items-center text-sm font-medium rounded-[50px]">
+                  {rating}
+                </p>
+              </div>
             </div>
             <div className="flex justify-start gap-4 items-center">
               <button className="btn bg-mainBg text-white hover:bg-green-500 rounded-[50px]">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -6,6 +6,9 @@ import banner from "../assets/banner.jpg";
 
 const Home = () => {
   const product_categories = useLoaderData();
+  useEffect(() => {
+    document.title = "Gadget Heaven";
+  }, []);
 
   return (
     <div>
