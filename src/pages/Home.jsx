@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, NavLink, useLoaderData } from "react-router-dom";
+import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import banner from "../assets/banner.jpg";
-import Gadgets from "../components/Gadgets";
 
 const Home = () => {
   const product_categories = useLoaderData();
@@ -118,7 +117,35 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Gadgets product_categories={product_categories}></Gadgets>
+
+      <section className="font-sora container px-14 mx-auto ">
+        <h1 className="font-bold text-[40px] text-center">
+          Explore Cutting-Edge Gadgets
+        </h1>
+        <div className="flex flex-col justify-center items-center lg:flex-row gap-6 mt-12">
+          <div
+            className="grid grid-cols-2 lg:grid-cols-1  self-start gap-6  border  p-6 bg-[#FFFFFF] rounded-2xl"
+            role="tablist"
+          >
+            {product_categories.map((item) => (
+              <NavLink
+                to={`/home/:${item.id}`}
+                key={item.id}
+                className={({ isActive }) =>
+                  `px-[28px] py-[14px] text-left rounded-[32px] ${
+                    isActive ? "bg-purple-500 text-white" : "bg-[#09080F0D]"
+                  }`
+                }
+              >
+                {item.category}
+              </NavLink>
+            ))}
+          </div>
+          <div>
+            <Outlet></Outlet>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
