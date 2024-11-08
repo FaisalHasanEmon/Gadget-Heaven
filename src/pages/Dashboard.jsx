@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Heading from "../components/Heading";
 import { LiaSortSolid } from "react-icons/lia";
+import verified_log from "../assets/Group.png";
 import {
   getFromCard,
   getWishList,
@@ -74,6 +75,10 @@ const Dashboard = () => {
   const handleFromWishListToCartItem = (item) => {
     addItemsToCard(item);
   };
+  // Add to Card Button
+  const cardButton = () => {
+    window.location.reload();
+  };
   return (
     <div className="font-sora">
       <div className="container mx-auto ">
@@ -86,7 +91,10 @@ const Dashboard = () => {
         ></Heading>
         <div className="flex gap-6 mt-8">
           <button
-            onClick={() => handleIsCard(true)}
+            onClick={() => {
+              handleIsCard(true);
+              cardButton();
+            }}
             className={`${
               isCard ? "bg-white text-mainBg" : "bg-transparent text-white"
             } btn w-[169px] rounded-[50px]`}
@@ -168,6 +176,9 @@ const Dashboard = () => {
       {/* Modal For Purchased Data Starts */}
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box text-center">
+          <figure className="flex justify-center items-center mb-5">
+            <img className="object-cover" src={verified_log} alt="" />
+          </figure>
           <h3 className="font-bold text-lg">Payment Successfully</h3>
           <p className="py-4">Thanks For Purchasing</p>
           <p>Total: {totalCost}</p>

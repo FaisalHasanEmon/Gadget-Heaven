@@ -26,6 +26,10 @@ const DashboardData = ({
     useSetButton(true);
   };
 
+  // Add Card Button
+  // const cardButton = () => {
+  //   window.location.reload();
+  // };
   return (
     <div className="my-6">
       <div className="flex justify-between items-start bg-[#FFFFFF] p-8 rounded-2xl  border">
