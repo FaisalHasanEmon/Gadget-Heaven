@@ -43,19 +43,24 @@ const addWishList = (gadget) => {
   localStorage.setItem("wishList", JSON.stringify(wishItems));
   toast.success("Successfully Added To Wish List!");
 };
-// Remove data from local storage
 
+// Remove data from local storage
 function removeCardItem(id) {
   const cardItems = getFromCard();
   const remaining = cardItems.filter((item) => item.product_id != id);
   localStorage.setItem("card", JSON.stringify(remaining));
   toast.success("Successfully Removed!");
 }
-// Export the function
+
+// Reomve all the data from local storage
+function purchased() {
+  localStorage.clear("card");
+}
 export {
   addItemsToCard,
   getFromCard,
   addWishList,
   getWishList,
   removeCardItem,
+  purchased,
 };

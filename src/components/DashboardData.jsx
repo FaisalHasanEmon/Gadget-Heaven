@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RxCrossCircled } from "react-icons/rx";
 
 const DashboardData = ({ data, type = "", handleRemoveCard }) => {
-  const [ishidden, setIsHidden] = useState("hidden");
+  // const [ishidden, setIsHidden] = useState("hidden");
   const { product_image, product_title, description, price, product_id } = data;
 
   return (

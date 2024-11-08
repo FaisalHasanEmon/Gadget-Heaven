@@ -5,13 +5,13 @@ import { useLocation } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import ReactStars from "react-rating-stars-component";
+import Footer from "../components/Footer";
 import {
   addItemsToCard,
   addWishList,
   getFromCard,
   getWishList,
 } from "../utilities";
-import Footer from "../components/Footer";
 
 const Details = () => {
   const location = useLocation();
@@ -40,7 +40,7 @@ const Details = () => {
     const isExist = getDataFromCard.find(
       (item) => item.product_id == product_id
     );
-    isExist && useSetWishList("gray");
+    isExist && useSetButton(true);
   }, []);
 
   // For Wish List Data
@@ -49,7 +49,7 @@ const Details = () => {
     const isExist = getDataFromCard.find(
       (item) => item.product_id == product_id
     );
-    isExist && useSetButton(true);
+    isExist && useSetWishList("gray");
   }, []);
 
   const handleAddCard = (gadget) => {
