@@ -5,6 +5,7 @@ const Statistics = () => {
   useEffect(() => {
     document.title = "Statistics";
   }, []);
+
   return (
     <div className="container mx-auto">
       <Navbar></Navbar>

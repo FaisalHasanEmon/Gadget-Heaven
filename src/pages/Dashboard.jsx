@@ -12,6 +12,7 @@ import {
   addItemsToCard,
 } from "../utilities";
 import DashboardData from "../components/DashboardData";
+import { NavLink } from "react-router-dom";
 
 // Dynamic title for dashboard
 const Dashboard = () => {
@@ -185,9 +186,11 @@ const Dashboard = () => {
           <div className="modal-action">
             <form method="dialog" className="mx-auto">
               {/* if there is a button in form, it will close the modal */}
-              <button onClick={() => handlePurchased()} className="btn">
-                Close
-              </button>
+              <NavLink to="/">
+                <button onClick={() => handlePurchased()} className="btn">
+                  Close
+                </button>
+              </NavLink>
             </form>
           </div>
         </div>

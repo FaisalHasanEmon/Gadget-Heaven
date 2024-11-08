@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLoaderData,
+  useLocation,
+} from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import banner from "../assets/banner.jpg";
@@ -50,15 +56,43 @@ const Home = () => {
                   >
                     <NavLink
                       to="/"
-                      className={({ isActive }) => isActive && "text-amber-600"}
+                      className={
+                        useLocation().pathname == "/"
+                          ? "text-orange-500 font-bold border border-mainBg px-3 py-2 rounded-[32px] backdrop-blur-xl bg-mainBg/10"
+                          : "text-black border border-white px-3 py-2 rounded-[32px]"
+                      }
                     >
                       Home
                     </NavLink>
-                    <NavLink to="/statistics" className="text-black">
+                    <NavLink
+                      to="/statistics"
+                      className={
+                        useLocation().pathname == "/statistics"
+                          ? "text-orange-500 font-bold border border-mainBg px-3 py-2 rounded-[32px] backdrop-blur-xl bg-mainBg/10"
+                          : "text-black border border-white px-3 py-2 rounded-[32px]"
+                      }
+                    >
                       Statistics
                     </NavLink>
-                    <NavLink to="/dashboard" className="text-black">
+                    <NavLink
+                      to="/dashboard"
+                      className={
+                        useLocation().pathname == "/dashboard"
+                          ? "text-orange-500 font-bold border border-mainBg px-3 py-2 rounded-[32px] backdrop-blur-xl bg-mainBg/10"
+                          : "text-black border border-white px-3 py-2 rounded-[32px]"
+                      }
+                    >
                       Dashboard
+                    </NavLink>
+                    <NavLink
+                      to="/feedback"
+                      className={
+                        useLocation().pathname == "/feedback"
+                          ? "text-orange-500 font-bold border border-mainBg px-3 py-2 rounded-[32px] backdrop-blur-xl bg-mainBg/10"
+                          : "text-black border border-white px-3 py-2 rounded-[32px]"
+                      }
+                    >
+                      Feedback
                     </NavLink>
                   </ul>
                 </div>
@@ -70,12 +104,44 @@ const Home = () => {
                 <ul className="menu menu-horizontal px-1 space-x-3">
                   <NavLink
                     to="/"
-                    className={({ isActive }) => isActive && "text-lime-300"}
+                    className={
+                      useLocation().pathname == "/"
+                        ? "text-orange-500 font-bold border border-white px-3 py-2 rounded-[32px] backdrop-blur-xl bg-mainBg/10"
+                        : "text-black border border-mainBg px-3 py-2 rounded-[32px]"
+                    }
                   >
                     Home
                   </NavLink>
-                  <NavLink to="/statistics">Statistics</NavLink>
-                  <NavLink to="/dashboard">Dashboard</NavLink>
+                  <NavLink
+                    to="/statistics"
+                    className={
+                      useLocation().pathname == "/statistics"
+                        ? "text-orange-500 font-bold border border-white px-3 py-2 rounded-[32px] backdrop-blur-xl bg-mainBg/10"
+                        : "text-black border border-mainBg px-3 py-2 rounded-[32px]"
+                    }
+                  >
+                    Statistics
+                  </NavLink>
+                  <NavLink
+                    to="/dashboard"
+                    className={
+                      useLocation().pathname == "/dashboard"
+                        ? "text-orange-500 font-bold border border-white px-3 py-2 rounded-[32px] backdrop-blur-xl bg-mainBg/10"
+                        : "text-black border border-mainBg px-3 py-2 rounded-[32px]"
+                    }
+                  >
+                    Dashboard
+                  </NavLink>
+                  <NavLink
+                    to="/feedback"
+                    className={
+                      useLocation().pathname == "/feedback"
+                        ? "text-orange-500 font-bold border border-white px-3 py-2 rounded-[32px] backdrop-blur-xl bg-mainBg/10"
+                        : "text-black border border-mainBg px-3 py-2 rounded-[32px]"
+                    }
+                  >
+                    Feedback
+                  </NavLink>
                 </ul>
               </div>
               <div className="navbar-end">
@@ -118,7 +184,7 @@ const Home = () => {
                 accessories, we have it all!
               </p>
               <div>
-                <Link>
+                <Link to="/dashboard">
                   <button className="btn rounded-[50px] font-bold text-xl text-mainBg mt-8 shadow-slate-400">
                     Shop Now
                   </button>

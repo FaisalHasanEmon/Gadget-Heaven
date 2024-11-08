@@ -5,11 +5,14 @@ import Statistics from "../pages/Statistics";
 import Home from "../pages/Home";
 import GadgetCategories from "../components/GadgetCategories";
 import Details from "../pages/Details";
+import ErrorPage from "../pages/ErrorPage";
+import Feedback from "../pages/Feedback";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -39,6 +42,10 @@ const routes = createBrowserRouter([
       {
         path: "/statistics",
         element: <Statistics></Statistics>,
+      },
+      {
+        path: "/feedback",
+        element: <Feedback></Feedback>,
       },
     ],
   },

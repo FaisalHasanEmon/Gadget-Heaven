@@ -131,5 +131,195 @@
     ],
     "availability": true,
     "rating": 4.4
+  },
+  {
+    "id": 5,
+    "product_id": "P008",
+    "product_title": "Apple MacBook Pro 14",
+    "product_image": "https://i.ibb.co.com/XYxDpBx/macbook.jpg",
+    "category": "Laptop",
+    "product_category": "Laptop",
+    "price": 1999,
+    "description": "Powerful laptop with M1 Pro chip, perfect for creators and professionals.",
+    "specification": [
+      "14.2-inch Liquid Retina XDR display",
+      "Apple M1 Pro chip",
+      "16GB RAM, 512GB SSD",
+      "16-core GPU",
+      "macOS Monterey"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "id": 1,
+    "product_id": "P009",
+    "product_title": "HP Spectre x360",
+    "product_image": "https://i.ibb.co.com/fGRmQs9/HP-Spectre-x360.jpg",
+    "category": "Laptop",
+    "product_category": "Laptop",
+    "price": 1299,
+    "description": "Versatile 2-in-1 laptop with a stunning display and solid performance.",
+    "specification": [
+      "13.3-inch OLED display",
+      "Intel Core i7 11th Gen processor",
+      "16GB RAM, 1TB SSD",
+      "Intel Iris Xe Graphics",
+      "Windows 11"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "id": 1,
+    "product_id": "P010",
+    "product_title": "ASUS ROG Zephyrus G14",
+    "product_image": "https://i.ibb.co.com/h28jRjV/asus.jpg",
+    "category": "Laptop",
+    "product_category": "Laptop",
+    "price": 1599,
+    "description": "Compact and powerful gaming laptop with Ryzen 9 processor.",
+    "specification": [
+      "14-inch QHD display",
+      "AMD Ryzen 9 processor",
+      "16GB RAM, 1TB SSD",
+      "NVIDIA GeForce RTX 3060",
+      "Windows 11"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "id": 1,
+    "product_id": "P011",
+    "product_title": "Microsoft Surface Laptop 4",
+    "product_image": "https://i.ibb.co.com/k9yFs5S/microsoft-Surface.jpg",
+    "category": "Laptop",
+    "product_category": "Laptop",
+    "price": 999,
+    "description": "Sleek and lightweight laptop with a vibrant touchscreen display.",
+    "specification": [
+      "13.5-inch PixelSense touchscreen",
+      "Intel Core i5 11th Gen processor",
+      "8GB RAM, 512GB SSD",
+      "Intel Iris Xe Graphics",
+      "Windows 10"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "id": 1,
+    "product_id": "P012",
+    "product_title": "Lenovo ThinkPad X1 Carbon",
+    "product_image": "https://i.ibb.co.com/5L1RJh6/lenovo.jpg",
+    "category": "Laptop",
+    "product_category": "Laptop",
+    "price": 1299,
+    "description": "Durable business laptop with a sleek design and high performance.",
+    "specification": [
+      "14-inch FHD display",
+      "Intel Core i7 11th Gen processor",
+      "16GB RAM, 1TB SSD",
+      "Intel Iris Xe Graphics",
+      "Windows 10 Pro"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "id": 1,
+    "product_id": "P013",
+    "product_title": "Acer Swift 3",
+    "product_image": "https://i.ibb.co.com/dKmn69w/acer.jpg",
+    "category": "Laptop",
+    "product_category": "Laptop",
+    "price": 699,
+    "description": "Budget-friendly laptop with strong performance for everyday use.",
+    "specification": [
+      "14-inch FHD display",
+      "AMD Ryzen 7 5700U processor",
+      "8GB RAM, 512GB SSD",
+      "AMD Radeon Graphics",
+      "Windows 10"
+    ],
+    "availability": true,
+    "rating": 4.4
+  },
+  {
+    "id": 1,
+    "product_id": "P014",
+    "product_title": "Razer Blade 15",
+    "product_image": "https://i.ibb.co.com/vvZ95X8/razer.jpg",
+    "category": "Laptop",
+    "product_category": "Laptop",
+    "price": 1799,
+    "description": "High-end gaming laptop with superior graphics and performance.",
+    "specification": [
+      "15.6-inch FHD 144Hz display",
+      "Intel Core i7 10th Gen processor",
+      "16GB RAM, 512GB SSD",
+      "NVIDIA GeForce RTX 2070",
+      "Windows 10"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "product_id": "P015",
+    "product_title": "Samsung Galaxy S22 Ultra",
+    "product_image": "https://i.ibb.co.com/m9FzNZX/samsung-Galaxy-S22-Ultra.jpg",
+    "category": "Mobile",
+    "product_category": "Mobile",
+    "price": 1199,
+    "description": "High-end smartphone with powerful camera and performance capabilities.",
+    "specification": [
+      "6.8-inch QHD+ Dynamic AMOLED 2X display",
+      "Qualcomm Snapdragon 8 Gen 1",
+      "12GB RAM, 256GB storage",
+      "108MP quad-camera setup",
+      "Android 12"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "product_id": "P016",
+    "product_title": "Google Pixel 7 Pro",
+    "product_image": "https://i.ibb.co.com/9wH9Ztb/Google-Pixel7-Pro.jpg",
+    "category": "Mobile",
+    "product_category": "Mobile",
+    "price": 899,
+    "description": "Premium smartphone with excellent camera and stock Android experience.",
+    "specification": [
+      "6.7-inch QHD+ OLED display",
+      "Google Tensor G2 processor",
+      "12GB RAM, 128GB storage",
+      "50MP dual rear camera",
+      "Android 13"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "id": 6,
+    "product_id": "P017",
+    "product_title": "Apple iPhone 14 Pro Max",
+    "product_image": "https://i.ibb.co.com/WGjX6ZD/iphone14-Pro-Max.jpg",
+    "category": "Mobile",
+    "product_category": "iPhone",
+    "price": 1099,
+    "description": "Flagship iPhone model with top-notch performance and advanced camera features.",
+    "specification": [
+      "6.7-inch Super Retina XDR display",
+      "A16 Bionic chip",
+      "6GB RAM, 128GB storage",
+      "48MP main camera",
+      "iOS 16"
+    ],
+    "availability": true,
+    "rating": 4.9
   }
 ]
