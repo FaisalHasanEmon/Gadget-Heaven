@@ -10,6 +10,7 @@ import {
   getWishList,
   removeCardItem,
   purchased,
+  removeWishItem,
 } from "../utilities";
 import DashboardData from "../components/DashboardData";
 import toast, { Toaster } from "react-hot-toast";
@@ -23,6 +24,7 @@ const Dashboard = () => {
   const wish_data = getWishList();
 
   const [card_data, setCardData] = useState(data_of_card);
+  const [data_wish, setDataWish] = useState(wish_data);
   const [totalCost, setTotalCost] = useState(0);
 
   const handleSort = () => {
@@ -43,9 +45,16 @@ const Dashboard = () => {
     const gadgetPrice = gadget ? gadget.price : 0;
     setTotalCost(totalCost - gadgetPrice);
   };
+  const handleRemoveWish = (id) => {
+    removeWishItem(id);
+    const favorites = getWishList();
+    setDataWish(favorites);
+  };
   const handlePurchased = () => {
     purchased();
-    setCardData([]);
+    const favorites = getFromCard();
+    setCardData(favorites);
+    setTotalCost(0);
   };
 
   const handleIsCard = (choice) => {
@@ -96,7 +105,11 @@ const Dashboard = () => {
             </button>
             <button
               className="btn font-medium text-lg"
-              onClick={() => handlePurchased()}
+              onClick={() => {
+                handlePurchased();
+                document.getElementById("my_modal_1").showModal();
+              }}
+              disabled={totalCost > 0 ? false : true}
             >
               Purchase
             </button>
@@ -117,17 +130,38 @@ const Dashboard = () => {
       {/* Card Data Starts */}
 
       {/* Wish List Data Starts */}
-      <div className={`${!isCard ? "block" : "hidden"} container mx-auto mt-5`}>
+      <div className={`${!isCard ? "block container mx-auto px-7" : "hidden"}`}>
         <div>
           <p className="font-bold text-xl">Wish List</p>
         </div>
         <div>
           {wish_data.map((data) => (
-            <DashboardData key={data.product_id} data={data}></DashboardData>
+            <DashboardData
+              key={data.product_id}
+              data={data}
+              handleRemoveWish={handleRemoveWish}
+            ></DashboardData>
           ))}
         </div>
       </div>
       {/* Wish List Data Ends */}
+      {/* Modal For Purchased Data Starts */}
+      {/* Open the modal using document.getElementById('ID').showModal() method */}
+
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box text-center">
+          <h3 className="font-bold text-lg">Payment Successfully</h3>
+          <p className="py-4">Thanks For Purchasing</p>
+          <p>Total: {totalCost}</p>
+          <div className="modal-action">
+            <form method="dialog" className="mx-auto">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      {/* Modal For Purchased Data Ends */}
     </div>
   );
 };

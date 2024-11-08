@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { RxCrossCircled } from "react-icons/rx";
 
-const DashboardData = ({ data, type = "", handleRemoveCard }) => {
+const DashboardData = ({
+  data,
+  type = "",
+  handleRemoveCard,
+  handleRemoveWish,
+}) => {
   // const [ishidden, setIsHidden] = useState("hidden");
   const { product_image, product_title, description, price, product_id } = data;
 
@@ -32,7 +37,11 @@ const DashboardData = ({ data, type = "", handleRemoveCard }) => {
         {/* This Div For Delete */}
         <div>
           <RxCrossCircled
-            onClick={() => handleRemoveCard(product_id)}
+            onClick={() => {
+              type == "card"
+                ? handleRemoveCard(product_id)
+                : handleRemoveWish(product_id);
+            }}
             color="red"
             size={30}
           />
