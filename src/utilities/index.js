@@ -59,9 +59,9 @@ function removeWishItem(id) {
   toast.success("Successfully Removed!");
 }
 
-// Reomve all Card data from local storage
+// Remove all Card data from local storage
 function purchased() {
-  localStorage.clear("card");
+  localStorage.removeItem("card");
 }
 export {
   addItemsToCard,

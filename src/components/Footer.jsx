@@ -4,7 +4,7 @@ import Heading from "./Heading";
 const Footer = () => {
   return (
     <div className="bg-base-200 mt-7">
-      <footer className="flex flex-col justify-center items-center gap-7 text-base-content p-10 container mx-auto ">
+      <footer className="flex flex-col justify-center items-center lg:gap-7 text-base-content p-10 container mx-auto ">
         <Heading
           title={"Gadget Heaven"}
           subtitle={

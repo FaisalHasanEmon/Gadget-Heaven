@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RxCrossCircled } from "react-icons/rx";
+import { addItemsToCard, getFromCard } from "../utilities";
 
 const DashboardData = ({
   data,
   type = "",
   handleRemoveCard,
   handleRemoveWish,
+  handleFromWishListToCartItem,
 }) => {
-  // const [ishidden, setIsHidden] = useState("hidden");
   const { product_image, product_title, description, price, product_id } = data;
+  const [setButton, useSetButton] = useState(false);
+  // For Card Data
+  useEffect(() => {
+    const getDataFromCard = getFromCard();
+    const isExist = getDataFromCard.find(
+      (item) => item.product_id == product_id
+    );
+    isExist && useSetButton(true);
+  }, []);
+
+  // Handling data from wish list to cart list
+  const handleAddCard = (gadget) => {
+    handleFromWishListToCartItem(gadget);
+    useSetButton(true);
+  };
 
   return (
     <div className="my-6">
@@ -28,6 +44,11 @@ const DashboardData = ({
               className={`${
                 type == "card" ? "hidden" : "block"
               } btn bg-mainBg text-white rounded-[50px]`}
+              onClick={() => {
+                handleAddCard(data);
+                handleRemoveWish(product_id);
+              }}
+              disabled={setButton}
             >
               Add to Card
             </button>

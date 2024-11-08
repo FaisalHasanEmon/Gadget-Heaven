@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Heading from "../components/Heading";
-import { useLocation } from "react-router-dom";
-import { BsCart3 } from "react-icons/bs";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { LiaSortSolid } from "react-icons/lia";
 import {
   getFromCard,
@@ -11,32 +8,39 @@ import {
   removeCardItem,
   purchased,
   removeWishItem,
+  addItemsToCard,
 } from "../utilities";
 import DashboardData from "../components/DashboardData";
-import toast, { Toaster } from "react-hot-toast";
+
+// Dynamic title for dashboard
 const Dashboard = () => {
   useEffect(() => {
     document.title = "Dashboard";
   }, []);
 
-  const [isCard, setIstCard] = useState(true);
+  // Fetching data from local Storage
   const data_of_card = getFromCard();
   const wish_data = getWishList();
 
-  const [card_data, setCardData] = useState(data_of_card);
-  const [data_wish, setDataWish] = useState(wish_data);
-  const [totalCost, setTotalCost] = useState(0);
+  // Use States
+  const [isCard, setIstCard] = useState(true); // Switching between card and wishlist
+  const [card_data, setCardData] = useState(data_of_card); //Handling add card data
+  const [data_wish, setDataWish] = useState(wish_data); //Handling wishlist data
+  const [totalCost, setTotalCost] = useState(0); //Handling total cost data
 
+  //It's handling Sorting button
   const handleSort = () => {
     const sorted = [...data_of_card].sort((a, b) => b.price - a.price);
     setCardData(sorted);
   };
 
+  // It's calculating the total amount
   useEffect(() => {
     const cost = data_of_card.reduce((total, item) => total + item.price, 0);
     setTotalCost(cost);
   }, []);
 
+  // It's handling the cart list remove button
   const handleRemoveCard = (id) => {
     removeCardItem(id);
     const favorites = getFromCard();
@@ -45,11 +49,15 @@ const Dashboard = () => {
     const gadgetPrice = gadget ? gadget.price : 0;
     setTotalCost(totalCost - gadgetPrice);
   };
+
+  // It's handling the wishlist remove button
   const handleRemoveWish = (id) => {
     removeWishItem(id);
     const favorites = getWishList();
     setDataWish(favorites);
   };
+
+  // It's Handling the purchase button
   const handlePurchased = () => {
     purchased();
     const favorites = getFromCard();
@@ -57,10 +65,15 @@ const Dashboard = () => {
     setTotalCost(0);
   };
 
+  // It's handling the Cart button and the wish list button
   const handleIsCard = (choice) => {
     setIstCard(choice);
   };
 
+  //It's handling add to cart from wishlist
+  const handleFromWishListToCartItem = (item) => {
+    addItemsToCard(item);
+  };
   return (
     <div className="font-sora">
       <div className="container mx-auto ">
@@ -92,23 +105,25 @@ const Dashboard = () => {
       </div>
 
       {/* Card Data Starts */}
-      <div className={`${isCard ? "block container mx-auto px-7" : "hidden"} `}>
+      <div
+        className={`${
+          isCard ? "block container mx-auto px-7 mt-5" : "hidden"
+        } `}
+      >
         <div className="flex justify-between items-center font-bold text-xl">
           <p>Cart</p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-3 mt-5 font-bold text-xl">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-3  font-bold text-xl">
             <p>Total Coast: {totalCost}</p>
             <button
               onClick={() => handleSort()}
               className="btn font-medium text-lg"
+              disabled={totalCost > 0 ? false : true}
             >
               Sort By Price <LiaSortSolid size={25} />
             </button>
             <button
               className="btn font-medium text-lg"
-              onClick={() => {
-                handlePurchased();
-                document.getElementById("my_modal_1").showModal();
-              }}
+              onClick={() => document.getElementById("my_modal_1").showModal()}
               disabled={totalCost > 0 ? false : true}
             >
               Purchase
@@ -130,7 +145,11 @@ const Dashboard = () => {
       {/* Card Data Starts */}
 
       {/* Wish List Data Starts */}
-      <div className={`${!isCard ? "block container mx-auto px-7" : "hidden"}`}>
+      <div
+        className={`${
+          !isCard ? "block container mx-auto px-7 mt-7" : "hidden"
+        }`}
+      >
         <div>
           <p className="font-bold text-xl">Wish List</p>
         </div>
@@ -140,14 +159,13 @@ const Dashboard = () => {
               key={data.product_id}
               data={data}
               handleRemoveWish={handleRemoveWish}
+              handleFromWishListToCartItem={handleFromWishListToCartItem}
             ></DashboardData>
           ))}
         </div>
       </div>
       {/* Wish List Data Ends */}
       {/* Modal For Purchased Data Starts */}
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
-
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box text-center">
           <h3 className="font-bold text-lg">Payment Successfully</h3>
@@ -156,7 +174,9 @@ const Dashboard = () => {
           <div className="modal-action">
             <form method="dialog" className="mx-auto">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
+              <button onClick={() => handlePurchased()} className="btn">
+                Close
+              </button>
             </form>
           </div>
         </div>

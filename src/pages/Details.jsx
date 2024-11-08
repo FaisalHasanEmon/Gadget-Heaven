@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import ReactStars from "react-rating-stars-component";
-import Footer from "../components/Footer";
+
 import {
   addItemsToCard,
   addWishList,
@@ -30,6 +30,7 @@ const Details = () => {
     rating,
   } = data;
 
+  // It's for Dynamic Title
   useEffect(() => {
     document.title = "Details";
   }, []);
@@ -52,11 +53,13 @@ const Details = () => {
     isExist && useSetWishList("gray");
   }, []);
 
+  // It's adding data to Add card dashboard and disabling the button Add to Card
   const handleAddCard = (gadget) => {
     addItemsToCard(gadget);
     useSetButton(true);
   };
 
+  // It's adding data to wishlist and disabling the button Wishlist
   const handleWishList = (wish) => {
     addWishList(wish);
     useSetWishList("gray");
@@ -67,12 +70,12 @@ const Details = () => {
       <div className="container mx-auto font-sora">
         <Navbar></Navbar>
       </div>
-      <div className=" bg-mainBg h-[375px] flex flex-col justify-start items-center pt-8 mb-[600px]">
+      <div className=" bg-mainBg h-[375px] flex flex-col justify-start items-center pt-8 mb-[800px] lg:mb-[600px]">
         <Heading
           title="Product Details"
           subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
         ></Heading>
-        <div className="w-[350px] lg:w-auto flex flex-col lg:flex-row justify-center items-start gap-8 p-2 lg:p-8 bg-white rounded-3xl mt-8 mb-10">
+        <div className="w-[350px] lg:w-auto flex flex-col lg:flex-row justify-center items-start gap-8 p-2 lg:p-8 bg-white rounded-3xl mt-8  mb-10">
           <figure className="lg:w-[425px] lg:h-[503px]  rounded-2xl overflow-hidden">
             <img className="w-full h-full object-center" src={product_image} />
           </figure>
