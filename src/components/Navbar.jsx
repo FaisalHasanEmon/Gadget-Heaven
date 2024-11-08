@@ -49,7 +49,7 @@ const Navbar = () => {
               >
                 Home
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to="/statistics"
                 className={
                   useLocation().pathname == "/statistics"
@@ -58,7 +58,7 @@ const Navbar = () => {
                 }
               >
                 Statistics
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 to="/dashboard"
                 className={
@@ -97,7 +97,7 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/statistics"
               className={
                 useLocation().pathname == "/statistics"
@@ -106,7 +106,7 @@ const Navbar = () => {
               }
             >
               Statistics
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/dashboard"
               className={

@@ -3,8 +3,11 @@ import Navbar from "../components/Navbar";
 import Heading from "../components/Heading";
 
 const Feedback = () => {
-  const handleForm = async (e) => {
-    e.preventDefault;
+  useEffect(() => {
+    document.title = "Feedback";
+  }, []);
+  const handleForm = (event) => {
+    event.preventDefault();
   };
   return (
     <div>
