@@ -67,10 +67,9 @@ const Details = () => {
 
   return (
     <div>
-      <div className="container mx-auto font-sora">
-        <Navbar></Navbar>
-      </div>
-      <div className=" bg-mainBg h-[375px] flex flex-col justify-start items-center pt-8 mb-[800px] lg:mb-[600px]">
+      <Navbar></Navbar>
+      {/* <div className="container mx-auto font-sora"></div> */}
+      <div className=" bg-mainBg h-[375px] flex flex-col justify-start items-center pt-8 mt-16 mb-[800px] lg:mb-[600px]">
         <Heading
           title="Product Details"
           subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"

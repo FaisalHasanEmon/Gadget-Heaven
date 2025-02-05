@@ -16,7 +16,7 @@ const Navbar = () => {
   console.log(useLocation().pathname);
   return (
     <>
-      <div className="navbar md:pr-16 mt-1">
+      <div className="fixed top-0 z-50 backdrop-blur-3xl bg-white navbar md:pr-16  ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

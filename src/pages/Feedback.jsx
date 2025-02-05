@@ -12,11 +12,13 @@ const Feedback = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="container mx-auto bg-mainBg flex justify-center items-center py-8">
-        <Heading
-          title="Provide Your Special Feedback Here"
-          subtitle="If you've any issues about any services or want's to claim warranty then let use know here."
-        ></Heading>
+      <div className="mt-16  bg-mainBg  py-8">
+        <div className="container mx-auto flex justify-center items-center">
+          <Heading
+            title="Provide Your Special Feedback Here"
+            subtitle="If you've any issues about any services or want's to claim warranty then let use know here."
+          ></Heading>
+        </div>
       </div>
       <div className="mt-7 container mx-auto px-8 lg:px-80 ">
         <form

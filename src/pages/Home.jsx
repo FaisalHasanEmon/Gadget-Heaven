@@ -24,10 +24,10 @@ const Home = () => {
       {/* Navbar and Banner Section */}
       <section className="font-sora container mx-auto mt-[30px] mb-[150px] lg:mb-[500px]">
         {/*Main Nav  */}
-        <div className="text-white w-full backdrop-blur-3xl rounded-[32px] bg-white/60 p-2 border">
-          <div className="bg-mainBg border rounded-[32px] w-full h-[694px]">
+        <div className="text-white w-full backdrop-blur-3xl rounded-[32px] bg-white/60 p-2 border ">
+          <div className="bg-mainBg border rounded-[32px] w-full h-[694px] ">
             {/* Navbar Starts */}
-            <div className="navbar md:pr-16 mt-7">
+            <div className="navbar md:pr-16 mt-7 ">
               <div className="navbar-start">
                 <div className="dropdown">
                   <div

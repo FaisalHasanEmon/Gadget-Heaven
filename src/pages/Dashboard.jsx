@@ -12,7 +12,7 @@ import {
   addItemsToCard,
 } from "../utilities";
 import DashboardData from "../components/DashboardData";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 // Dynamic title for dashboard
 const Dashboard = () => {
@@ -82,10 +82,9 @@ const Dashboard = () => {
   };
   return (
     <div className="font-sora">
-      <div className="container mx-auto ">
-        <Navbar></Navbar>
-      </div>
-      <div className=" bg-mainBg  flex flex-col justify-start items-center py-8 ">
+      <Navbar></Navbar>
+      {/* <div className="container mx-auto "></div> */}
+      <div className=" bg-mainBg  flex flex-col justify-start items-center py-8 mt-16">
         <Heading
           title="Dashboard"
           subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
@@ -102,6 +101,7 @@ const Dashboard = () => {
           >
             Cart
           </button>
+
           <button
             onClick={() => handleIsCard(false)}
             className={`${
