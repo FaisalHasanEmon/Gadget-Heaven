@@ -112,67 +112,71 @@ const Dashboard = () => {
           </button>
         </div>
       </div>
-
-      {/* Card Data Starts */}
-      <div
-        className={`${
-          isCard ? "block container mx-auto px-7 mt-5" : "hidden"
-        } `}
-      >
-        <div className="flex justify-between items-center font-bold text-xl">
-          <p>Cart</p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-3  font-bold text-xl">
-            <p>Total Coast: {totalCost}</p>
-            <button
-              onClick={() => handleSort()}
-              className="btn font-medium text-lg"
-              disabled={totalCost > 0 ? false : true}
-            >
-              Sort By Price <LiaSortSolid size={25} />
-            </button>
-            <button
-              className="btn font-medium text-lg"
-              onClick={() => document.getElementById("my_modal_1").showModal()}
-              disabled={totalCost > 0 ? false : true}
-            >
-              Purchase
-            </button>
+      <div className="min-h-[calc(100vh-353px)]">
+        {/* Card Data Starts */}
+        <div
+          className={`${
+            isCard ? "block container mx-auto px-7 mt-5" : "hidden"
+          } `}
+        >
+          <div className="flex justify-between items-center font-bold text-xl">
+            <p>Cart</p>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-3  font-bold text-xl">
+              <p>Total Coast: {totalCost}</p>
+              <button
+                onClick={() => handleSort()}
+                className="btn font-medium text-lg"
+                disabled={totalCost > 0 ? false : true}
+              >
+                Sort By Price <LiaSortSolid size={25} />
+              </button>
+              <button
+                className="btn font-medium text-lg"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+                disabled={totalCost > 0 ? false : true}
+              >
+                Purchase
+              </button>
+            </div>
+          </div>
+          {/* card data */}
+          <div>
+            {card_data.map((data) => (
+              <DashboardData
+                key={data.product_id}
+                data={data}
+                type="card"
+                handleRemoveCard={handleRemoveCard}
+              ></DashboardData>
+            ))}
           </div>
         </div>
-        {/* card data */}
-        <div>
-          {card_data.map((data) => (
-            <DashboardData
-              key={data.product_id}
-              data={data}
-              type="card"
-              handleRemoveCard={handleRemoveCard}
-            ></DashboardData>
-          ))}
-        </div>
-      </div>
-      {/* Card Data Starts */}
+        {/* Card Data Starts */}
 
-      {/* Wish List Data Starts */}
-      <div
-        className={`${
-          !isCard ? "block container mx-auto px-7 mt-7" : "hidden"
-        }`}
-      >
-        <div>
-          <p className="font-bold text-xl">Wish List</p>
-        </div>
-        <div>
-          {wish_data.map((data) => (
-            <DashboardData
-              key={data.product_id}
-              data={data}
-              handleRemoveWish={handleRemoveWish}
-              handleFromWishListToCartItem={handleFromWishListToCartItem}
-            ></DashboardData>
-          ))}
+        {/* Wish List Data Starts */}
+        <div
+          className={`${
+            !isCard ? "block container mx-auto px-7 mt-7" : "hidden"
+          }`}
+        >
+          <div>
+            <p className="font-bold text-xl">Wish List</p>
+          </div>
+          <div>
+            {wish_data.map((data) => (
+              <DashboardData
+                key={data.product_id}
+                data={data}
+                handleRemoveWish={handleRemoveWish}
+                handleFromWishListToCartItem={handleFromWishListToCartItem}
+              ></DashboardData>
+            ))}
+          </div>
         </div>
       </div>
+
       {/* Wish List Data Ends */}
       {/* Modal For Purchased Data Starts */}
       <dialog id="my_modal_1" className="modal">
